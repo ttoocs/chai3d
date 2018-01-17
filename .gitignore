@@ -5,3 +5,7 @@ assignments*
 *.sln
 *.vcxproj
 
+*lib*
+*obj*
+
+*cscope.out
