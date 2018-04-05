@@ -190,7 +190,7 @@ void cBulletGenericObject::setStatic(bool a_static)
     world.
 */
 //==============================================================================
-void cBulletGenericObject::buildDynamicModel()
+void cBulletGenericObject::buildDynamicModel(short int collisionFilterGroup, short int collisionFilterMask) 
 {
     // get mass and inertia properties
     btVector3 inertia(m_inertia(0), m_inertia(1), m_inertia(2));
@@ -205,7 +205,7 @@ void cBulletGenericObject::buildDynamicModel()
     m_bulletRigidBody->setSleepingThresholds(0, 0);
 
     // add bullet rigid body to bullet world
-    m_dynamicWorld->m_bulletWorld->addRigidBody(m_bulletRigidBody);
+    m_dynamicWorld->m_bulletWorld->addRigidBody(m_bulletRigidBody,collisionFilterGroup,collisionFilterMask);
 }
 
 

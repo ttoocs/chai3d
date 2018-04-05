@@ -146,7 +146,7 @@ public:
     virtual bool getStatic() const { return (m_static); } 
 
     //! This method builds a dynamic representation of the object in the Bullet world.
-    virtual void buildDynamicModel();
+    virtual void buildDynamicModel(short int collisionFilterGroup=btBroadphaseProxy::DefaultFilter, short int collisionFilterMask=btBroadphaseProxy::AllFilter);
 
     //! This method updates the CHAI3D position representation from the Bullet dynamics engine.
     virtual void updatePositionFromDynamics() {}
